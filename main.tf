@@ -8,7 +8,8 @@ terraform {
 }
 
 provider "snowflake" {
-  role  = "SYSADMIN"
+  region   = "ap-southeast-2"
+  role     = "SYSADMIN"
 }
 
 resource "snowflake_database" "db" {
@@ -18,6 +19,5 @@ resource "snowflake_database" "db" {
 resource "snowflake_warehouse" "warehouse" {
   name           = "TF_DEMO"
   warehouse_size = "large"
-
   auto_suspend = 60
 }
